@@ -202,6 +202,90 @@
             font-style: normal;
         }
 
+        .hidden {
+            display: none;
+        }
+
+        .surprise-box {
+            margin: 30px 0;
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+
+        .surprise-photo {
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            border: 6px solid #e91e63;
+            margin: 40px auto;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe3f1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8em;
+        }
+
+        .surprise-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .forever-text {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+            animation: glow 2s infinite;
+            text-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .surprise-photo {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 40px 20px;
@@ -229,13 +313,15 @@
     <div class="container">
         <div class="main-heart">❤️</div>
         
-        <!-- PHẦN 1: TIÊU ĐỀ - Thay đổi text ở đây -->
-        <h1>Chúc Mừng Valentine!</h1>
+        <!-- NỘI DUNG SẼ BỊ ẨN ĐI KHI BẤM NÚT -->
+        <div id="mainContent">
+            <!-- PHẦN 1: TIÊU ĐỀ - Thay đổi text ở đây -->
+            <h1>Chúc Mừng Valentine!</h1>
         <div class="subtitle">Dành tặng người anh yêu nhất 😘 </div>
 
         <!-- PHẦN 2: HÌNH ẢNH - Thay emoji hoặc thêm link ảnh -->
         <div class="photo-frame">
-            <img src="image1.jpg" alt="Ảnh">
+            <img src="image2.jpg" alt="Ảnh">
             <!-- Để thêm ảnh, thay emoji bằng: <img src="LINK_ẢNH_CỦA_BẠN" alt="Ảnh"> -->
         </div>
 
@@ -258,20 +344,45 @@
                 Nhân ngày lễ tình nhân Valentine. Anh chúc iem ngày càng xinh đẹp, dịu dàng, quyến rũ, nết na, rạng rỡ, cuốn hút, hiền hậu, ấm áp, bao dung, kiên cường nhá 😍.
                 Kiên trì zoi anh hơn và mãi bên anh nhó 😇😇😇.
             </p>
+
+            <p>
+                Không biết iem cảm thấy thế nào nhỉ. 3 tháng cũm cóa thể coi là dài nhưng vẫn ngắn so với hành trình của chúng ta mà đúng hong.
+                Qua quãng thời gian đó iem dần hiểu anh hơn và anh cũng mở lòng với iem nhiều hơn, hiểu iem hơn.
+                Anh biết anh chưa điều chỉnh cảm xúc của mình đủ tốt, chưa thực sự tích cực với iem.
+                Nhưng anh cảm thấy mình đang từng chút một thay đổi (tích cực hen 😊). 
+                Do đóa anh mún rằng trong lúc iem tiêu cực (mà iem cũm chằng biết là mình tiêu cực âu) hoặc lúc giận dỗi nhau, iem không đẩy anh ra nữa.
+                Bởi vì thực sự, iem đã mang đến rất nhiều niềm vui cho anh. Nhờ có iem một ngày của anh mới thú vị và nhiều màu sắc hơn.
+                Nên là cóa phiền xí cũm chả sao cả. Hì hì 😁. Vì iem lun cóa quyền đóa mà 😗. 
+                Cuối cùng thì anh hi vọng iem chú ý đến việc học của iem hơn. Giờ iem đâu cóa cố vì mình iem đâu. 
+                Vì gia đình iem, vì bản thân iem và vì cả anh nữa. Cố lên nhóooooooo 😉. 
+                Anh vẫn lun ở cạnh iem mò 😅.<br>
+                Lớp du. Chụt chụt chụt 😘😘😘. 
+            </p>
             
             <div class="signature">
-                Iu iemmm ❤️<br>
+                Iu iemmm nhứt ❤️<br>
                 - Bách (January ❄️) -
             </div>
         </div>
 
         <!-- PHẦN 5: NÚT BẤM (Tùy chọn) -->
-        <button class="btn" onclick="showMessage()">💌 Nhấn vào đây nhé!</button>
+        <button class="btn" onclick="showMessage()">💌 Anh ở đây nè hí hí 😝!</button>
+        </div>
+        <!-- KẾT THÚC mainContent -->
+
+        <!-- PHẦN HIỆN SAU KHI BẤM NÚT - Thay thế toàn bộ nội dung -->
+        <div id="surpriseBox" class="surprise-box hidden">
+            <div class="forever-text">Forever ∞</div>
+            <div class="surprise-photo">
+                <img src="image1.jpg" alt="Forever">
+            </div>
+        </div>
 
         <div class="footer-message">
             Happy Valentine's Day 2026 💕
         </div>
     </div>
+
 
     <script>
         // Tạo trái tim bay
@@ -290,10 +401,19 @@
             }
         }
 
-        // Hàm cho nút bấm - Bạn có thể tùy chỉnh
+        // Hàm cho nút bấm - Xóa nội dung cũ và hiển thị ảnh + Forever
         function showMessage() {
-            alert('Anh yêu em! 💖');
-            // Hoặc bạn có thể thay đổi thành hành động khác
+            const mainContent = document.getElementById('mainContent');
+            const surpriseBox = document.getElementById('surpriseBox');
+            
+            // Thêm hiệu ứng mờ dần cho nội dung chính
+            mainContent.classList.add('fade-out');
+            
+            // Sau khi animation kết thúc, ẩn nội dung chính và hiện surprise
+            setTimeout(() => {
+                mainContent.classList.add('hidden');
+                surpriseBox.classList.remove('hidden');
+            }, 500); // 500ms khớp với thời gian animation fadeOut
         }
 
         // Khởi tạo khi trang load
@@ -302,4 +422,75 @@
         };
     </script>
 </body>
+<div id="lockScreen" style="
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Segoe UI',sans-serif;
+    z-index:9999;
+">
+    <div style="
+        background:white;
+        padding:30px 40px;
+        border-radius:16px;
+        text-align:center;
+        box-shadow:0 20px 40px rgba(0,0,0,.25);
+        max-width:320px;
+        width:100%;
+    ">
+        <h2>🔐For only you</h2>
+        <p>Nhập mật khẩu để tiếp tục 💕</p>
+
+        <input id="passwordInput" type="password" placeholder="Mật khẩu..."
+               style="
+               width:100%;
+               padding:12px;
+               font-size:16px;
+               border-radius:10px;
+               border:1px solid #ccc;
+               outline:none;
+               ">
+
+        <button onclick="checkPassword()" style="
+            margin-top:15px;
+            width:100%;
+            padding:12px;
+            font-size:16px;
+            border:none;
+            border-radius:10px;
+            background:#ff5e78;
+            color:white;
+            cursor:pointer;
+        ">
+            Mở khoá 💖
+        </button>
+
+        <p id="errorMsg" style="color:red; margin-top:10px; display:none;">
+            ❌ Mật khẩu sai ròi, thử lại nha!
+            🔑 Gợi ý: Một ngày nào đó rất quan trọng!
+        </p>
+    </div>
+</div>
+
+<script>
+const PASSWORD = "19112025"; // 🔑 đổi mật khẩu ở đây
+
+function checkPassword() {
+    const input = document.getElementById("passwordInput");
+    const error = document.getElementById("errorMsg");
+
+    if (input.value === PASSWORD) {
+        document.getElementById("lockScreen").style.display = "none";
+    } else {
+        error.style.display = "block";
+        input.value = "";
+        input.focus();
+    }
+}
+</script>
+
+
 </html>
